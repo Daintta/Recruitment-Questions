@@ -1,3 +1,12 @@
+.startupBody {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  padding: 10px;
+}
+
 .container {
   overflow: hidden;
 }
@@ -16,6 +25,10 @@
 /* The "show" class is added to the filtered elements */
 .show {
   display: block;
+}
+
+.hide {
+  display: none;
 }
 
 /* Style the buttons */
@@ -38,15 +51,20 @@
   color: white;
 }
 
-#myInput {
-    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+input {
+  background-size: 10px 10px;
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 20px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+  #myInput {
+    background-image: url('https://static-00.iconduck.com/assets.00/search-icon-1024x1024-hd1pcvqu.png'); /* Add a search icon to input */
     background-position: 10px 12px; /* Position the search icon */
     background-repeat: no-repeat; /* Do not repeat the icon image */
     width: 100%; /* Full-width */
-    font-size: 16px; /* Increase font-size */
     padding: 12px 20px 12px 40px; /* Add some padding */
-    border: 1px solid #ddd; /* Add a grey border */
-    margin-bottom: 12px; /* Add some space below the input */
   }
   
   #myTable {

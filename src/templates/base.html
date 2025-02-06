@@ -5,45 +5,47 @@
     <link rel="icon" href="{{ site.metadata.icon }}" type="image/png">
     <link rel="stylesheet" href="base.css">
 </head>
-<body>
-    <h1>{{ site.metadata.name }} ({{ site.metadata.version }})</h1>
+<body id="body" class="startupBody">
+    <div id="startupDiv" class="show">
+      <input type="text" id="startupInput" placeholder="Enter password...">
+      <button class="btn" onclick="login()">Enter Realm</button>
+    </div>
+    <div id="mainDiv" class="hide">
+      <h1>{{ site.metadata.name }} ({{ site.metadata.version }})</h1>
 
-    {% for item in site.content %}
-        {% if item.type == "csv_table" %}
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search..">
-            <div id="myBtnContainer">
-              <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-              {% for category in categories %}
-                <button class="btn" onclick="filterSelection('{{ category.name }}')">{{ category.name }}</button>
-              {% endfor %}
-            </div>
-            <br>
-            <table id="myTable">
-                <tr class="header">
-                    <th style="width:10%;">Category</th>
-                    <th style="width:10%;">Category Type</th>
-                    <th style="width:35%;">Question</th>
-                    <th style="width:35%;">Answer</th>
-                    <th style="width:10%;">Difficulty</th>
-                </tr>
-                {% for entry in entries %}
-                    <tr>
-                        <td>{{ entry.category.name }}</td>
-                        <td>{{ entry.category.type }}</td>
-                        <td>{{ entry.question }}</td>
-                        <td>{{ entry.answer }}</td>
-                        <td>{{ "⭐"*entry.difficulty }}</td>
-                    </tr>
+      {% for item in site.content %}
+          {% if item.type == "csv_table" %}
+              <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search..">
+              <div id="myBtnContainer">
+                <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+                {% for category in categories %}
+                  <button class="btn" onclick="filterSelection('{{ category.name }}')">{{ category.name }}</button>
                 {% endfor %}
-            </table>
-        {% else %}
-            <p>{{ item.contents }}</p>
-        {% endif %}
-    {% endfor %}
-
-    {{ a_variable }}
-
-    {# a comment #}
+              </div>
+              <br>
+              <table id="myTable">
+                  <tr class="header">
+                      <th style="width:10%;">Category</th>
+                      <th style="width:10%;">Category Type</th>
+                      <th style="width:35%;">Question</th>
+                      <th style="width:35%;">Answer</th>
+                      <th style="width:10%;">Difficulty</th>
+                  </tr>
+                  {% for entry in entries %}
+                      <tr>
+                          <td>{{ entry.category.name }}</td>
+                          <td>{{ entry.category.type }}</td>
+                          <td>{{ entry.question }}</td>
+                          <td>{{ entry.answer }}</td>
+                          <td>{{ "⭐"*entry.difficulty }}</td>
+                      </tr>
+                  {% endfor %}
+              </table>
+          {% else %}
+              <p>{{ item.contents }}</p>
+          {% endif %}
+      {% endfor %}
+    </div>
 </body>
 <script>
 
@@ -149,6 +151,18 @@ for (var i = 0; i < btns.length; i++) {
     current[0].className = current[0].className.replace(" active", "");
     this.className += " active";
   });
+}
+
+function login() {
+  key = document.getElementById("startupInput").value;
+  if (btoa(key) == "VHJhbnNwYXJlbnQtRmFpci1EYXJpbmc=") {
+    tohide = document.getElementById("startupDiv");
+    toshow = document.getElementById("mainDiv");
+    body = document.getElementById("body");
+    w3RemoveClass(toshow, "hide");
+    w3AddClass(tohide, "hide");
+    w3RemoveClass(body, "startupBody")
+  }
 }
 </script>
 </html>
