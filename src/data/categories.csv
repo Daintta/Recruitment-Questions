@@ -10,3 +10,4 @@ skill_cont,skill,Containerisation
 skill_cloud,skill,Cloud
 skill_iac,skill,IaC
 skill_pipelines,skill,Pipelines
+scenario_type,scenario,Scenario Question
