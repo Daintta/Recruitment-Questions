@@ -16,4 +16,4 @@ html = html_template.render(**dl.data.model_dump())
 
 print(html)
 
-MyUtil.File.write(f"src/generated/{template}", html)
+MyUtil.File.write(f"src/generated/index.html", html)
