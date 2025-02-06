@@ -12,10 +12,12 @@ class Data(BaseModel):
     
     @staticmethod
     def parse(cfile: str, efile: str, tfile: str) -> Self:
-        categories = Category.parse(cfile)
+        categories = sorted(Category.parse(cfile), key=lambda x: x.name)
+        entries = Entry.parse(efile, categories)
+        sorted_entries = sorted(entries, key=lambda x: x.difficulty)
         return Data(
             categories = categories,
-            entries = Entry.parse(efile, categories),
+            entries = sorted_entries,
             site = Site.parse(tfile)
         )
     
