@@ -24,5 +24,5 @@ jobs:
               pip install -r requirements.txt
               python3.12 src/__init__.py
               ls
+              git status
               cat src/generated/index.html
-              
