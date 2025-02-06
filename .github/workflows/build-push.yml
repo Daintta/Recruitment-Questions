@@ -23,6 +23,13 @@ jobs:
               source venv/bin/activate
               pip install -r requirements.txt
               python3.12 src/__init__.py
-              ls
-              git status
-              cat src/generated/index.html
+
+      # Commit and push changes
+      - name: Commit changes
+        run: |
+          git config --local user.name "Daintta Bot"
+          git config --local user.email "hwixley1@gmail.com"
+          git pull
+          git add src/generated/index.html
+          git commit -m "GH-Action: auto-update HTML"
+          git push
