@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Daintta Software Engineering - Recruitment</title>
+    <link rel="icon" href="https://media.licdn.com/dms/image/v2/C4E0BAQGsAbjgoRNhkQ/company-logo_200_200/company-logo_200_200/0/1630591821102/daintta_logo?e=2147483647&v=beta&t=7rHqajLmeo7_LohDWc8kS3WEjzR8s-fiuCt_2Cv7fo4" type="image/png">
+    <link rel="stylesheet" href="base.css">
+</head>
+<body>
+    <h1>Daintta Software Engineering - Recruitment (v0.0.0)</h1>
+
+    
+        
+            <p>Questions & Answers</p>
+        
+    
+        
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search..">
+            <div id="myBtnContainer">
+              <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+              
+                <button class="btn" onclick="filterSelection('Python')">Python</button>
+              
+                <button class="btn" onclick="filterSelection('Go')">Go</button>
+              
+                <button class="btn" onclick="filterSelection('Frontend')">Frontend</button>
+              
+                <button class="btn" onclick="filterSelection('Backend')">Backend</button>
+              
+                <button class="btn" onclick="filterSelection('Database')">Database</button>
+              
+                <button class="btn" onclick="filterSelection('Testing')">Testing</button>
+              
+                <button class="btn" onclick="filterSelection('Security')">Security</button>
+              
+                <button class="btn" onclick="filterSelection('Containerisation')">Containerisation</button>
+              
+                <button class="btn" onclick="filterSelection('Cloud')">Cloud</button>
+              
+                <button class="btn" onclick="filterSelection('IaC')">IaC</button>
+              
+                <button class="btn" onclick="filterSelection('Pipelines')">Pipelines</button>
+              
+            </div>
+            <br>
+            <table id="myTable">
+                <tr class="header">
+                    <th style="width:10%;">Category</th>
+                    <th style="width:10%;">Category Type</th>
+                    <th style="width:35%;">Question</th>
+                    <th style="width:35%;">Answer</th>
+                    <th style="width:10%;">Difficulty</th>
+                </tr>
+                
+                    <tr>
+                        <td>Python</td>
+                        <td>language</td>
+                        <td>Can you explain the difference between a list and a tuple in Python?</td>
+                        <td>A list is a mutable sequence of elements, while a tuple is an immutable sequence of elements. This means that you can add, remove, or modify elements in a list, but not in a tuple.</td>
+                        <td>⭐</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Python</td>
+                        <td>language</td>
+                        <td>When would you use a set over a list or tuple?</td>
+                        <td>You would use a set when you're interested in whether you have seen certain data before, sets have faster access speeds than lists because they use hashing.<br><br>BONUS: mention of set O(1) vs list/tuple O(n)</td>
+                        <td>⭐</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Python</td>
+                        <td>language</td>
+                        <td>How do you handle errors in Python code?</td>
+                        <td>try, except block</td>
+                        <td>⭐</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Python</td>
+                        <td>language</td>
+                        <td>What is your experience with object-oriented programming in Python?</td>
+                        <td>Looking for talk of classes, objects, inheritance, composition, polymorphism</td>
+                        <td>⭐</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Python</td>
+                        <td>language</td>
+                        <td>Can you explain how Python's garbage collector works? (What is a garbage collector?)</td>
+                        <td>Python's garbage collector is responsible for automatically freeing up memory that is no longer being used by a program. It works by periodically identifying and removing objects that are no longer being referenced by the program, freeing up the associated memory for other uses.<br><br>BONUS: talks about reference counting</td>
+                        <td>⭐⭐</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Python</td>
+                        <td>language</td>
+                        <td>What does the yield keyword do?</td>
+                        <td>Yield 'pauses' the function and can return a value without ending it. It is used for iterators and async programming</td>
+                        <td>⭐⭐</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Python</td>
+                        <td>language</td>
+                        <td>Do you know about the Python Global Interpreter Lock?</td>
+                        <td>Looking for something along the lines of ensuring Python only executes Python Bytecode one thread at a time. It is essentially a Mutex. Only one thread can be actively running something at a time.</td>
+                        <td>⭐⭐</td>
+                    </tr>
+                
+            </table>
+        
+    
+
+    
+
+    
+</body>
+<script>
+
+  function myFunction() {
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+  
+    // Loop through all table rows, and hide those who don't match the search query
+    console.log("hello")
+    console.log(tr.length);
+    for (i = 0; i < tr.length; i++) {
+      console.log(tr[i]);
+      td_el = tr[i].getElementsByTagName("td");
+      td = td_el[2]
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+</script>
+<script>
+  function filterTable(category) {
+    if (category == "all") {
+      category = "";
+    }
+
+    var filter, table, tr, td, i, txtValue;
+    filter = category.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 0; i < tr.length; i++) {
+      td_el = tr[i].getElementsByTagName("td");
+      td = td_el[0]
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+
+
+  filterSelection("all")
+function filterSelection(c) {
+  filterTable(c)
+
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) {
+      w3AddClass(x[i], "show");
+    }
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current control button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+</html>

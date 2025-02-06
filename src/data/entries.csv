@@ -1,0 +1,8 @@
+id,category_id,question,answer,difficulty
+py1,lang_py,Can you explain the difference between a list and a tuple in Python?,"A list is a mutable sequence of elements, while a tuple is an immutable sequence of elements. This means that you can add, remove, or modify elements in a list, but not in a tuple.",1
+py2,lang_py,When would you use a set over a list or tuple?,"You would use a set when you're interested in whether you have seen certain data before, sets have faster access speeds than lists because they use hashing.<br><br>BONUS: mention of set O(1) vs list/tuple O(n)",1
+py3,lang_py,How do you handle errors in Python code?,"try, except block", 1
+py4,lang_py,What is your experience with object-oriented programming in Python?,"Looking for talk of classes, objects, inheritance, composition, polymorphism",1
+py5,lang_py,Can you explain how Python's garbage collector works? (What is a garbage collector?),"Python's garbage collector is responsible for automatically freeing up memory that is no longer being used by a program. It works by periodically identifying and removing objects that are no longer being referenced by the program, freeing up the associated memory for other uses.<br><br>BONUS: talks about reference counting",2
+py6,lang_py,What does the yield keyword do?,Yield 'pauses' the function and can return a value without ending it. It is used for iterators and async programming,2
+py7,lang_py,Do you know about the Python Global Interpreter Lock?,"Looking for something along the lines of ensuring Python only executes Python Bytecode one thread at a time. It is essentially a Mutex. Only one thread can be actively running something at a time.",2

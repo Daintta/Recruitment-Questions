@@ -1,0 +1,12 @@
+id,type,name
+lang_py,language,Python
+lang_go,language,Go
+skill_frontend,skill,Frontend
+skill_backend,skill,Backend
+skill_db,skill,Database
+skill_test,skill,Testing
+skill_sec,skill,Security
+skill_cont,skill,Containerisation
+skill_cloud,skill,Cloud
+skill_iac,skill,IaC
+skill_pipelines,skill,Pipelines
