@@ -1,592 +1,615 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Daintta Software Engineering - Recruitment</title>
-    <link rel="icon" href="https://media.licdn.com/dms/image/v2/C4E0BAQGsAbjgoRNhkQ/company-logo_200_200/company-logo_200_200/0/1630591821102/daintta_logo?e=2147483647&v=beta&t=7rHqajLmeo7_LohDWc8kS3WEjzR8s-fiuCt_2Cv7fo4" type="image/png">
-    <link rel="stylesheet" href="base.css">
-</head>
-<body id="body">
+    <link rel="icon" href="https://media.licdn.com/dms/image/v2/C4E0BAQGsAbjgoRNhkQ/company-logo_200_200/company-logo_200_200/0/1630591821102/daintta_logo?e=2147483647&v=beta&t=7rHqajLmeo7_LohDWc8kS3WEjzR8s-fiuCt_2Cv7fo4" type="image/png" />
+    <link rel="stylesheet" href="base.css" />
+  </head>
+  <body id="body">
     <div id="mainDiv">
       <h1>Daintta Software Engineering - Recruitment (v0.0.1)</h1>
 
-      
-          
-              <p>Questions & Answers</p>
-          
-      
-          
-              <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search..">
-              <div id="myBtnContainer">
-                <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-                
-                  <button class="btn" onclick="filterSelection('Backend')">Backend</button>
-                
-                  <button class="btn" onclick="filterSelection('Cloud')">Cloud</button>
-                
-                  <button class="btn" onclick="filterSelection('Containerisation')">Containerisation</button>
-                
-                  <button class="btn" onclick="filterSelection('Database')">Database</button>
-                
-                  <button class="btn" onclick="filterSelection('Frontend')">Frontend</button>
-                
-                  <button class="btn" onclick="filterSelection('Go')">Go</button>
-                
-                  <button class="btn" onclick="filterSelection('IaC')">IaC</button>
-                
-                  <button class="btn" onclick="filterSelection('Pipelines')">Pipelines</button>
-                
-                  <button class="btn" onclick="filterSelection('Python')">Python</button>
-                
-                  <button class="btn" onclick="filterSelection('Scenario Question')">Scenario Question</button>
-                
-                  <button class="btn" onclick="filterSelection('Security')">Security</button>
-                
-                  <button class="btn" onclick="filterSelection('Testing')">Testing</button>
-                
-              </div>
-              <br>
-              <table id="myTable">
-                  <tr class="header">
-                      <th style="width:10%;">Category</th>
-                      <th style="width:10%;">Category Type</th>
-                      <th style="width:35%;">Question</th>
-                      <th style="width:35%;">Answer</th>
-                      <th style="width:10%;">Difficulty</th>
-                  </tr>
-                  
-                      <tr>
-                          <td><b>Testing</b></td>
-                          <td>skill</td>
-                          <td>Define Unit testing</td>
-                          <td>Small-scale tests that can quickly validate small units of software function as expected. Usually at the function or class level.<br><br>Ideally, these should be by far the most numerous tests.</td>
-                          <td></td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Python</b></td>
-                          <td>language</td>
-                          <td>Can you explain the difference between a list and a tuple in Python?</td>
-                          <td>A list is a mutable sequence of elements, while a tuple is an immutable sequence of elements. This means that you can add, remove, or modify elements in a list, but not in a tuple.</td>
-                          <td>⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Python</b></td>
-                          <td>language</td>
-                          <td>When would you use a set over a list or tuple?</td>
-                          <td>You would use a set when you're interested in whether you have seen certain data before, sets have faster access speeds than lists because they use hashing.<br><br>BONUS: mention of set O(1) vs list/tuple O(n)</td>
-                          <td>⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Python</b></td>
-                          <td>language</td>
-                          <td>How do you handle errors in Python code?</td>
-                          <td>try, except block</td>
-                          <td>⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Python</b></td>
-                          <td>language</td>
-                          <td>What is your experience with object-oriented programming in Python?</td>
-                          <td>Looking for talk of classes, objects, inheritance, composition, polymorphism</td>
-                          <td>⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Python</b></td>
-                          <td>language</td>
-                          <td>What libraries might you use for data science?</td>
-                          <td>Numpy, pandas.<br><br>Tensorflow, pytorch, keras, ibis, fastai are also acceptable.</td>
-                          <td>⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Python</b></td>
-                          <td>language</td>
-                          <td>What libraries or tools might you use to add some type safety to python?</td>
-                          <td>Pydantic, mypy</td>
-                          <td>⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Go</b></td>
-                          <td>language</td>
-                          <td>What is one of the key advantages of Using Go for building applications?</td>
-                          <td>- Cross-platform<br>- Compiles down to a single binary that includes the dependencies<br>- Automatic memory management</td>
-                          <td>⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Frontend</b></td>
-                          <td>skill</td>
-                          <td>Explain your understanding of the DOM. Given this, explain the benefits of leveraging a virtual DOM in frontend development?</td>
-                          <td>Virtual DOM is useful in frameworks like React by optimising the web component reloads. It also enables state to automatically get inherited by components without explicit assignments.</td>
-                          <td>⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Frontend</b></td>
-                          <td>skill</td>
-                          <td>Under what circumstances does a component re-render in React?</td>
-                          <td>1. Changes in props<br>2. Changes in state<br>3. Parent component re-renders<br>4. Context changes: If a component is consuming values from a React context using useContext (in functional components), and the context value changes, the component will re-render.<br>5. Using hooks with dependencies: Hooks like useEffect, useMemo, and useCallback accept dependency arrays as their second argument. When any of the listed dependencies change, the effect will run, or the memoized value or callback will be recomputed, potentially causing the component to re-render.</td>
-                          <td>⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Database</b></td>
-                          <td>skill</td>
-                          <td>Compare the differences between SQL and NoSQL databases?<br><br>What are the pros and cons of each?</td>
-                          <td>SQL databases use SQL (Structured Query Language). NoSQL databases use JSON (JavaScript Object Notation), XML, YAML, or binary schema, facilitating unstructured data. SQL has a fixed-defined schema, while NoSQL databases are more flexible.</td>
-                          <td>⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Testing</b></td>
-                          <td>skill</td>
-                          <td>Define Integration testing</td>
-                          <td>Tests that validate the integration of multiple components.</td>
-                          <td>⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Testing</b></td>
-                          <td>skill</td>
-                          <td>Define end-to-end testing</td>
-                          <td>Tests that validate the complete data flow or operation of the program. These are often the most complex to write</td>
-                          <td>⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Python</b></td>
-                          <td>language</td>
-                          <td>Can you explain how Python's garbage collector works? (What is a garbage collector?)</td>
-                          <td>Python's garbage collector is responsible for automatically freeing up memory that is no longer being used by a program. It works by periodically identifying and removing objects that are no longer being referenced by the program, freeing up the associated memory for other uses.<br><br>BONUS: talks about reference counting</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Python</b></td>
-                          <td>language</td>
-                          <td>What does the yield keyword do?</td>
-                          <td>Yield 'pauses' the function and can return a value without ending it. It is used for iterators and async programming</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Python</b></td>
-                          <td>language</td>
-                          <td>Do you know about the Python Global Interpreter Lock?</td>
-                          <td>Looking for something along the lines of ensuring Python only executes Python Bytecode one thread at a time. It is essentially a Mutex. Only one thread can be actively running something at a time.</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Python</b></td>
-                          <td>language</td>
-                          <td>When would you use threading (or async) in Python? How would you do parallel execution?</td>
-                          <td>Follow on from previous question. Threading is still useful when I/O bound code (writing to disk, communicating over network) as other code can execute whilst waiting.</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Python</b></td>
-                          <td>language</td>
-                          <td>What is the difference between Python and C?</td>
-                          <td>C is compiled, Python has a garbage collector, Python is dynamically typed whereas C is static, C can achieve better performance because it has less overhead</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Python</b></td>
-                          <td>language</td>
-                          <td>What is an iterator? Why would you use one?</td>
-                          <td>Iterators return data incrementally, this is useful when processing large amounts of data as the whole dataset doesn't need to be loaded into memory.</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Python</b></td>
-                          <td>language</td>
-                          <td>When might you use a profiler</td>
-                          <td>To identify bottlenecks and inefficiencies that aren't obvious in the source code</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Python</b></td>
-                          <td>language</td>
-                          <td>Why is it a good idea to use a virtual environment? </td>
-                          <td>- Package conflicts between projects<br>- Package conflicts with your host OS</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Python</b></td>
-                          <td>language</td>
-                          <td>What are python's strengths and weaknesses, in your opinion?</td>
-                          <td>Strengths: Readability, flexibility, easy to learn , very large developer base, with a ton of libraries and APIs for basically anything you want<br>Weaknesses: Slow, Packaging isn't great compared to a compiled language, Threading and GIL</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Go</b></td>
-                          <td>language</td>
-                          <td>What is a Goroutine in Go and how does it differ from a traditional thread?</td>
-                          <td>- Lightweight concurrent execution unit enabling concurrent programming (multiple function to run independently and concurrently<br>- Multiple goroutines can run on a single OS thread in an interleaved manner<br>- Thread count is limited but allows true parallel execution of tasks<br>- Threads are heavier in terms of memory/resource consumption</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Go</b></td>
-                          <td>language</td>
-                          <td>Explain what a race-condition is in the context of goroutines. How can you prevent race-conditions in Go?</td>
-                          <td>- Occurs when multiple concurrent threads (or goroutines) access shared data simultaneously, and at least one of them modifies the data. The order and timing of these operations aren't guaranteed and so can lead to data-corruption, crashes or other unexpected behaviour.<br>- Prevent with proper synchronisation - Mutex to lock the data before editing it</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Go</b></td>
-                          <td>language</td>
-                          <td>How would you handle communication across goroutines/threads?</td>
-                          <td>- Can't just instantly use a function that's returned in a goroutine as you don't know when it's back. (Don't want a race-condition!)<br>- Goroutines - Use channels and other sync primitives so wait for the data<br>- Thread - Use mutexas, semaphores or other OS-sync mechanisms</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Frontend</b></td>
-                          <td>skill</td>
-                          <td>How can we prevent unnecessary rerenders in React?</td>
-                          <td>- React.memo<br>- Use the hook dependencies correctly in useCallback, useEffect and useMemo to avoid re-renders<br>- For big forms, prefer useRef over useState</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Frontend</b></td>
-                          <td>skill</td>
-                          <td>In Next.js how do API routes work?</td>
-                          <td>Next.js API routes provide a built-in solution for creating API endpoints within a Next.js application. They are server-side functions that run when a request is made to their corresponding URL. To create an API route, simply create a new file with a .js extension inside the pages/api folder, and export a default request handler function.</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Frontend</b></td>
-                          <td>skill</td>
-                          <td>Given you are building a website with repetitive API calls for retrieving assets like images. Lets assume these images do not change much over time, what strategy could you think of to optimise these network calls for repeat users?</td>
-                          <td>Caching<br><br>BONUS: use headers to determine whether to pull cached response or not</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Frontend</b></td>
-                          <td>skill</td>
-                          <td>Now lets say we are loading lots of assets at the same time on a website for example, a list of products with their images. Assume these images are only set as a fixed high-quality size over the API. How would you optimise the API to reduce load on frontend?</td>
-                          <td>Lazy loading. Add API call that only loads image thumbnail sizes, only if product is clicked are full assets loaded.</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Frontend</b></td>
-                          <td>skill</td>
-                          <td>What are the strategies we can use to optimize the performance of web applications?</td>
-                          <td>CDNs, GraphQL (maybe) to reduce overfetching, improve backend performance, use SSR and/or SSG, lazy loading for loading assets only when it's needed, minimize and compress HTML, CSS and JS files, and optimize images by compressing and resizing them.</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Backend</b></td>
-                          <td>skill</td>
-                          <td>Why are Go programs particularly well suited for containerisation?</td>
-                          <td>- Cross-platform<br>- Compiles down to a single binary that includes the Go library dependencies</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Backend</b></td>
-                          <td>skill</td>
-                          <td>Explain what a race-condition is in the context of goroutines. How can you prevent race-conditions in Go?</td>
-                          <td>- Occurs when multiple concurrent threads (or goroutines) access shared data simultaneously, and at least one of them modifies the data. The order and timing of these operations aren't guaranteed and so can lead to data-corruption, crashes or other unexpected behaviour.<br>- Prevent with proper synchronisation - Mutex to lock the data before editing it</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Backend</b></td>
-                          <td>skill</td>
-                          <td>How would you handle communication across goroutines/threads?</td>
-                          <td>- Can't just instantly use a function that's returned in a goroutine as you don't know when it's back. (Don't want a race-condition!)<br>- Goroutines - Use channels and other sync primitives so wait for the data<br>- Thread - Use mutexas, semaphores or other OS-sync mechanisms which can be error-prone and lead to race-conditions</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Scenario Question</b></td>
-                          <td>scenario</td>
-                          <td>Your team is developing a new feature for a web application that allows users to upload and process large datasets, with results displayed in a highly interactive dashboard. Users expect quick processing times and smooth interactions. After launching an early version, users report that the dashboard is slow to load, especially when handling large datasets.<br><br>Setup is: DB + BE API + FE<br><br>Questions:<br>- How would you diagnose and improve performance issues on both the backend and frontend?<br>- How would you adjust the frontend to ensure a smooth user experience? What UI/UX considerations would you prioritise?</td>
-                          <td>Backend:<br>- look for bottlenecks<br>- pagination<br>- lazy loading<br>- SQL query improvements - split into multiple queries?, inefficiencies<br>- DB indexing<br>- API endpoint size, can it be more succint?<br>- Preprocess CPU intensive, static data<br>- Async API<br>- Batch processing<br>- Caching<br>- Serverless functions<br>- Microservices<br><br>Frontend:<br>- Incremental loading<br>- Memoization<br>- loading spinners/placeholders</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Database</b></td>
-                          <td>skill</td>
-                          <td>In what scenario is database replication necessary?</td>
-                          <td>High availability, backups. Anywhere where you need robustness in data availability.<br><br>Bonus points if you talk about read/write nodes, managing split-brain scenarios in your favourite database technology</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Database</b></td>
-                          <td>skill</td>
-                          <td>What database would you use for time-series data?</td>
-                          <td>Looking for either:<br>- A time-series database like influx or timescale, with the rationale that it's built around time-series data<br>- Using time-series functionality in existing databases like postgres and mongo, because they're more widely used and better supported <br>- Either way, dig into any practical experience if they have it.</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Testing</b></td>
-                          <td>skill</td>
-                          <td>What are the strengths of manual testing over automated testing, and vice versa? </td>
-                          <td>Manual:<br>- good for complex testing that's impossible to automate or need only be performed infrequently.<br>- Exploratory testing allows for more specialised or creative testing outside of the basic test schema, validating more realistic usage.<br><br>Automated:<br>- Can exhaustively, repeatedly validate outputs of software far faster, more accurately, and in more detail than a human can <br><br>Realistically, a balance of both is optimal. </td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Scenario Question</b></td>
-                          <td>scenario</td>
-                          <td>What do you consider the difference is between the roles of “software engineer” and “software tester”?</td>
-                          <td>A good software engineer should take responsibility for the quality of their code, and that includes testing. Similarly, a tester needs to understand the software they're testing; how it should behave, what happens when it's going wrong, and ideally why it goes wrong. <br><br>Incidentally, if a software engineer feels testing is “beneath them” or states something along the lines of “if you wrote good enough code you wouldn't need to test it”, that's a very bad sign.</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Scenario Question</b></td>
-                          <td>scenario</td>
-                          <td>Tell me about a time you've used IaC tools like Packer or Ansible </td>
-                          <td>Looking for a non-trivial project that's got some consideration of:<br>- stability<br>- accessibility<br>- reproducibility<br><br>Be sure to dig into the design choices they've made, and the reasoning behind them</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Pipelines</b></td>
-                          <td>skill</td>
-                          <td>Can you explain the difference between Continuous Integration and Continuous Deployment?</td>
-                          <td>CI: A process where every commit to main is, at the very least, tested automatically. Usually it's also built. <br><br>CD: A process where every commit to main is built, and deployed to either a live service, or released to something like a container registry. </td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Scenario Question</b></td>
-                          <td>scenario</td>
-                          <td>Explain a time where you've had to interact with a CI/CD pipeline in a significant way (just running it doesn't count). What tooling did you use, and how do you feel about it? </td>
-                          <td>Looking for:<br>- having actually written a CI or CD pipeline, or done some significant work to modify or improve it<br>- What tooling are you familiar with? Have you critically evaluated whether this tooling is any good, and is your logic sound?</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Containerisation</b></td>
-                          <td>skill</td>
-                          <td>What is a container? How does it differ from a VM? </td>
-                          <td>Container: a standard unit of software that packages up code and all its dependencies so the application can run quickly and reliably on multiple computing environments. Docker, podman, etc<br><br>VMs virtualise the whole operating system - containers use namespaces to share kernel resources from the host OS</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Containerisation</b></td>
-                          <td>skill</td>
-                          <td>Why would you containerise software? </td>
-                          <td>- portability<br>- dependency encapsulation<br>- orchestration tooling</td>
-                          <td>⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Go</b></td>
-                          <td>language</td>
-                          <td>What's the difference between a buffered and an unbuffered channel in Go?</td>
-                          <td>- An unbuffered channel has a capacity of zero, so can only hold a single value at a time<br>- When a value is sent to an unbuffered channel, the sender will block until another goroutine is ready to receive the value - Buffered only blocks when the buffer is full<br>- unbuffered - Receiving blocks until value, enforces synchronisation<br>- buffered - Receiving blocks if empty, allows for async (sender/receiever can proceed as long as buffer isn't full/empty)</td>
-                          <td>⭐⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Frontend</b></td>
-                          <td>skill</td>
-                          <td>In Next.js what is the advantage of using Serverless mode?</td>
-                          <td>- Improved scalability, as serverless functions can automatically scale based on demand.<br>- Cost efficiency, as you only pay for the compute resources you actually use.<br>- Easier deployment and management, as you don't need to manage your own servers or infrastructure.<br>- Faster response times due to the serverless functions being deployed closer to the users.</td>
-                          <td>⭐⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Frontend</b></td>
-                          <td>skill</td>
-                          <td>What are Web Vitals (LCP, FID, CLS)? And how are they applied in the real world?</td>
-                          <td>Web Vitals are standardized metrics to measure the quality of the navigation inside a website:<br>- LCP (Largest Contentful Paint) - LCP measures the time it takes for the largest visible content element to be fully loaded and rendered. A LCP is considered good when it takes less than 2.5 seconds.<br>- FID (First Input Delay) - FID measures the time it takes for the browser to respond to the user's first interaction. A FID is considered good when it takes less than 100 milliseconds.<br>- CLS (Cumulative Layout Shift) - CLS measures the visual stability of a page by calculating the sum of layout shift scores for all unexpected layout shifts during the entire lifespan of the page.</td>
-                          <td>⭐⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Backend</b></td>
-                          <td>skill</td>
-                          <td>What is a Goroutine in Go and how does it differ from a traditional thread?</td>
-                          <td>- Lightweight concurrent execution unit enabling concurrent programming (multiple function to run independently and concurrently<br>- Multiple goroutines can run on a single OS thread in an interleaved manner<br>- Thread count is limited but allows true parallel execution of tasks<br>- Threads are heavier in terms of memory/resource consumption</td>
-                          <td>⭐⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Backend</b></td>
-                          <td>skill</td>
-                          <td>What's the difference between a buffered and an unbuffered channel in Go?</td>
-                          <td>- An unbuffered channel has a capacity of zero, so can only hold a single value at a time<br>- When a value is sent to an unbuffered channel, the sender will block until another goroutine is ready to receive the value - Buffered only blocks when the buffer is full<br>- unbuffered: Receiving blocks until value, enforces synchronisation<br>- buffered: Receiving blocks if empty, allows for async (sender/receiever can proceed as long as buffer isn't full/empty)</td>
-                          <td>⭐⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Scenario Question</b></td>
-                          <td>scenario</td>
-                          <td>How would you handle a database that's showing instability under load? </td>
-                          <td>- Replication<br>- more efficient queries<br>- profiling<br>- review your data model for efficiency: improve cardinality, improve compressibility<br>- If SQL, look into other databases since SQL is (mostly) transferrable between databases<br>- Offload any batch processing to tools like apache spark<br>- Increase resources for the host machine (caveat that this isn't an infinitely scalable solution)</td>
-                          <td>⭐⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Scenario Question</b></td>
-                          <td>scenario</td>
-                          <td>Assume you've taken over maintenance of a codebase with no tests of any kind. How much of each kind of testing do you prioritise, between unit, integration, e2e, and manual testing? </td>
-                          <td>The testing pyramid:<br>- fewest number of manual tests<br>- small number of e2e tests<br>- more integration tests<br>- large number of unit tests<br><br>None of these should necessarily be prioritised over the others - a mix of all of them is best, and the volume is inversely proportional to complexity - unit tests are simplest to write, while good e2e tests can get pretty complex. </td>
-                          <td>⭐⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Containerisation</b></td>
-                          <td>skill</td>
-                          <td>What is a multi-stage docker build, and why would you use one? </td>
-                          <td>A multi-stage build allows you to build on multiple parent images during the build process. For example, you might build and test a binary on a build container with all the necessary build tooling you need, then copy that final binary into a lightweight, security-hardened deployment container.<br><br>This process can also be used to reduce the number of layers in the final docker image. </td>
-                          <td>⭐⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Containerisation</b></td>
-                          <td>skill</td>
-                          <td>How would you orchestrate the deployment and maintenance of multiple containers?</td>
-                          <td>docker-compose, or kubernetes. Bonus points if you can go into the benefits of either:<br><br>dc:<br>- simple<br>- comes free with docker <br><br>k8s:<br>- powerful tool that requires you understand how it works</td>
-                          <td>⭐⭐⭐</td>
-                      </tr>
-                  
-                      <tr>
-                          <td><b>Scenario Question</b></td>
-                          <td>scenario</td>
-                          <td>Tell me about a time you've used container orchestration tools like docker-compose or kubernetes</td>
-                          <td>Looking for a non-trivial project that's got some consideration of:<br>- stability<br>- accessibility<br>- reproducibility<br><br>Be sure to dig into the design choices they've made, and the reasoning behind them</td>
-                          <td>⭐⭐⭐</td>
-                      </tr>
-                  
-              </table>
-          
-      
+       
+      <p>Questions & Answers</p>
+        
+      <input
+        type="text"
+        id="searchInput"
+        onkeyup="searchKeyUp()"
+        placeholder="Search.."
+      />
+      <div id="categoryBtnContainer">
+        <button class="btn active" onclick="filterSelection('all')">
+          Show all
+        </button>
+        
+        <button class="btn" onclick="filterSelection('Backend')">
+          Backend
+        </button>
+        
+        <button class="btn" onclick="filterSelection('Cloud')">
+          Cloud
+        </button>
+        
+        <button class="btn" onclick="filterSelection('Containerisation')">
+          Containerisation
+        </button>
+        
+        <button class="btn" onclick="filterSelection('Database')">
+          Database
+        </button>
+        
+        <button class="btn" onclick="filterSelection('Frontend')">
+          Frontend
+        </button>
+        
+        <button class="btn" onclick="filterSelection('Go')">
+          Go
+        </button>
+        
+        <button class="btn" onclick="filterSelection('IaC')">
+          IaC
+        </button>
+        
+        <button class="btn" onclick="filterSelection('Pipelines')">
+          Pipelines
+        </button>
+        
+        <button class="btn" onclick="filterSelection('Python')">
+          Python
+        </button>
+        
+        <button class="btn" onclick="filterSelection('Scenario Question')">
+          Scenario Question
+        </button>
+        
+        <button class="btn" onclick="filterSelection('Security')">
+          Security
+        </button>
+        
+        <button class="btn" onclick="filterSelection('Testing')">
+          Testing
+        </button>
+        
+      </div>
+      <br />
+      <table id="qandaTable">
+        <tr class="header">
+          <th style="width: 10%">Category</th>
+          <th style="width: 10%">Category Type</th>
+          <th style="width: 35%">Question</th>
+          <th style="width: 35%">Answer</th>
+          <th style="width: 10%">Difficulty</th>
+        </tr>
+        
+        <tr>
+          <td><b>Testing</b></td>
+          <td>skill</td>
+          <td>Define Unit testing</td>
+          <td>Small-scale tests that can quickly validate small units of software function as expected. Usually at the function or class level.<br><br>Ideally, these should be by far the most numerous tests.</td>
+          <td></td>
+        </tr>
+        
+        <tr>
+          <td><b>Python</b></td>
+          <td>language</td>
+          <td>Can you explain the difference between a list and a tuple in Python?</td>
+          <td>A list is a mutable sequence of elements, while a tuple is an immutable sequence of elements. This means that you can add, remove, or modify elements in a list, but not in a tuple.</td>
+          <td>⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Python</b></td>
+          <td>language</td>
+          <td>When would you use a set over a list or tuple?</td>
+          <td>You would use a set when you're interested in whether you have seen certain data before, sets have faster access speeds than lists because they use hashing.<br><br>BONUS: mention of set O(1) vs list/tuple O(n)</td>
+          <td>⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Python</b></td>
+          <td>language</td>
+          <td>How do you handle errors in Python code?</td>
+          <td>try, except block</td>
+          <td>⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Python</b></td>
+          <td>language</td>
+          <td>What is your experience with object-oriented programming in Python?</td>
+          <td>Looking for talk of classes, objects, inheritance, composition, polymorphism</td>
+          <td>⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Python</b></td>
+          <td>language</td>
+          <td>What libraries might you use for data science?</td>
+          <td>Numpy, pandas.<br><br>Tensorflow, pytorch, keras, ibis, fastai are also acceptable.</td>
+          <td>⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Python</b></td>
+          <td>language</td>
+          <td>What libraries or tools might you use to add some type safety to python?</td>
+          <td>Pydantic, mypy</td>
+          <td>⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Go</b></td>
+          <td>language</td>
+          <td>What is one of the key advantages of Using Go for building applications?</td>
+          <td>- Cross-platform<br>- Compiles down to a single binary that includes the dependencies<br>- Automatic memory management</td>
+          <td>⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Frontend</b></td>
+          <td>skill</td>
+          <td>Explain your understanding of the DOM. Given this, explain the benefits of leveraging a virtual DOM in frontend development?</td>
+          <td>Virtual DOM is useful in frameworks like React by optimising the web component reloads. It also enables state to automatically get inherited by components without explicit assignments.</td>
+          <td>⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Frontend</b></td>
+          <td>skill</td>
+          <td>Under what circumstances does a component re-render in React?</td>
+          <td>1. Changes in props<br>2. Changes in state<br>3. Parent component re-renders<br>4. Context changes: If a component is consuming values from a React context using useContext (in functional components), and the context value changes, the component will re-render.<br>5. Using hooks with dependencies: Hooks like useEffect, useMemo, and useCallback accept dependency arrays as their second argument. When any of the listed dependencies change, the effect will run, or the memoized value or callback will be recomputed, potentially causing the component to re-render.</td>
+          <td>⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Database</b></td>
+          <td>skill</td>
+          <td>Compare the differences between SQL and NoSQL databases?<br><br>What are the pros and cons of each?</td>
+          <td>SQL databases use SQL (Structured Query Language). NoSQL databases use JSON (JavaScript Object Notation), XML, YAML, or binary schema, facilitating unstructured data. SQL has a fixed-defined schema, while NoSQL databases are more flexible.</td>
+          <td>⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Testing</b></td>
+          <td>skill</td>
+          <td>Define Integration testing</td>
+          <td>Tests that validate the integration of multiple components.</td>
+          <td>⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Testing</b></td>
+          <td>skill</td>
+          <td>Define end-to-end testing</td>
+          <td>Tests that validate the complete data flow or operation of the program. These are often the most complex to write</td>
+          <td>⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Python</b></td>
+          <td>language</td>
+          <td>Can you explain how Python's garbage collector works? (What is a garbage collector?)</td>
+          <td>Python's garbage collector is responsible for automatically freeing up memory that is no longer being used by a program. It works by periodically identifying and removing objects that are no longer being referenced by the program, freeing up the associated memory for other uses.<br><br>BONUS: talks about reference counting</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Python</b></td>
+          <td>language</td>
+          <td>What does the yield keyword do?</td>
+          <td>Yield 'pauses' the function and can return a value without ending it. It is used for iterators and async programming</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Python</b></td>
+          <td>language</td>
+          <td>Do you know about the Python Global Interpreter Lock?</td>
+          <td>Looking for something along the lines of ensuring Python only executes Python Bytecode one thread at a time. It is essentially a Mutex. Only one thread can be actively running something at a time.</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Python</b></td>
+          <td>language</td>
+          <td>When would you use threading (or async) in Python? How would you do parallel execution?</td>
+          <td>Follow on from previous question. Threading is still useful when I/O bound code (writing to disk, communicating over network) as other code can execute whilst waiting.</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Python</b></td>
+          <td>language</td>
+          <td>What is the difference between Python and C?</td>
+          <td>C is compiled, Python has a garbage collector, Python is dynamically typed whereas C is static, C can achieve better performance because it has less overhead</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Python</b></td>
+          <td>language</td>
+          <td>What is an iterator? Why would you use one?</td>
+          <td>Iterators return data incrementally, this is useful when processing large amounts of data as the whole dataset doesn't need to be loaded into memory.</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Python</b></td>
+          <td>language</td>
+          <td>When might you use a profiler</td>
+          <td>To identify bottlenecks and inefficiencies that aren't obvious in the source code</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Python</b></td>
+          <td>language</td>
+          <td>Why is it a good idea to use a virtual environment? </td>
+          <td>- Package conflicts between projects<br>- Package conflicts with your host OS</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Python</b></td>
+          <td>language</td>
+          <td>What are python's strengths and weaknesses, in your opinion?</td>
+          <td>Strengths: Readability, flexibility, easy to learn , very large developer base, with a ton of libraries and APIs for basically anything you want<br>Weaknesses: Slow, Packaging isn't great compared to a compiled language, Threading and GIL</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Go</b></td>
+          <td>language</td>
+          <td>What is a Goroutine in Go and how does it differ from a traditional thread?</td>
+          <td>- Lightweight concurrent execution unit enabling concurrent programming (multiple function to run independently and concurrently<br>- Multiple goroutines can run on a single OS thread in an interleaved manner<br>- Thread count is limited but allows true parallel execution of tasks<br>- Threads are heavier in terms of memory/resource consumption</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Go</b></td>
+          <td>language</td>
+          <td>Explain what a race-condition is in the context of goroutines. How can you prevent race-conditions in Go?</td>
+          <td>- Occurs when multiple concurrent threads (or goroutines) access shared data simultaneously, and at least one of them modifies the data. The order and timing of these operations aren't guaranteed and so can lead to data-corruption, crashes or other unexpected behaviour.<br>- Prevent with proper synchronisation - Mutex to lock the data before editing it</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Go</b></td>
+          <td>language</td>
+          <td>How would you handle communication across goroutines/threads?</td>
+          <td>- Can't just instantly use a function that's returned in a goroutine as you don't know when it's back. (Don't want a race-condition!)<br>- Goroutines - Use channels and other sync primitives so wait for the data<br>- Thread - Use mutexas, semaphores or other OS-sync mechanisms</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Frontend</b></td>
+          <td>skill</td>
+          <td>How can we prevent unnecessary rerenders in React?</td>
+          <td>- React.memo<br>- Use the hook dependencies correctly in useCallback, useEffect and useMemo to avoid re-renders<br>- For big forms, prefer useRef over useState</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Frontend</b></td>
+          <td>skill</td>
+          <td>In Next.js how do API routes work?</td>
+          <td>Next.js API routes provide a built-in solution for creating API endpoints within a Next.js application. They are server-side functions that run when a request is made to their corresponding URL. To create an API route, simply create a new file with a .js extension inside the pages/api folder, and export a default request handler function.</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Frontend</b></td>
+          <td>skill</td>
+          <td>Given you are building a website with repetitive API calls for retrieving assets like images. Lets assume these images do not change much over time, what strategy could you think of to optimise these network calls for repeat users?</td>
+          <td>Caching<br><br>BONUS: use headers to determine whether to pull cached response or not</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Frontend</b></td>
+          <td>skill</td>
+          <td>Now lets say we are loading lots of assets at the same time on a website for example, a list of products with their images. Assume these images are only set as a fixed high-quality size over the API. How would you optimise the API to reduce load on frontend?</td>
+          <td>Lazy loading. Add API call that only loads image thumbnail sizes, only if product is clicked are full assets loaded.</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Frontend</b></td>
+          <td>skill</td>
+          <td>What are the strategies we can use to optimize the performance of web applications?</td>
+          <td>CDNs, GraphQL (maybe) to reduce overfetching, improve backend performance, use SSR and/or SSG, lazy loading for loading assets only when it's needed, minimize and compress HTML, CSS and JS files, and optimize images by compressing and resizing them.</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Backend</b></td>
+          <td>skill</td>
+          <td>Why are Go programs particularly well suited for containerisation?</td>
+          <td>- Cross-platform<br>- Compiles down to a single binary that includes the Go library dependencies</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Backend</b></td>
+          <td>skill</td>
+          <td>Explain what a race-condition is in the context of goroutines. How can you prevent race-conditions in Go?</td>
+          <td>- Occurs when multiple concurrent threads (or goroutines) access shared data simultaneously, and at least one of them modifies the data. The order and timing of these operations aren't guaranteed and so can lead to data-corruption, crashes or other unexpected behaviour.<br>- Prevent with proper synchronisation - Mutex to lock the data before editing it</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Backend</b></td>
+          <td>skill</td>
+          <td>How would you handle communication across goroutines/threads?</td>
+          <td>- Can't just instantly use a function that's returned in a goroutine as you don't know when it's back. (Don't want a race-condition!)<br>- Goroutines - Use channels and other sync primitives so wait for the data<br>- Thread - Use mutexas, semaphores or other OS-sync mechanisms which can be error-prone and lead to race-conditions</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Scenario Question</b></td>
+          <td>scenario</td>
+          <td>Your team is developing a new feature for a web application that allows users to upload and process large datasets, with results displayed in a highly interactive dashboard. Users expect quick processing times and smooth interactions. After launching an early version, users report that the dashboard is slow to load, especially when handling large datasets.<br><br>Setup is: DB + BE API + FE<br><br>Questions:<br>- How would you diagnose and improve performance issues on both the backend and frontend?<br>- How would you adjust the frontend to ensure a smooth user experience? What UI/UX considerations would you prioritise?</td>
+          <td>Backend:<br>- look for bottlenecks<br>- pagination<br>- lazy loading<br>- SQL query improvements - split into multiple queries?, inefficiencies<br>- DB indexing<br>- API endpoint size, can it be more succint?<br>- Preprocess CPU intensive, static data<br>- Async API<br>- Batch processing<br>- Caching<br>- Serverless functions<br>- Microservices<br><br>Frontend:<br>- Incremental loading<br>- Memoization<br>- loading spinners/placeholders</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Database</b></td>
+          <td>skill</td>
+          <td>In what scenario is database replication necessary?</td>
+          <td>High availability, backups. Anywhere where you need robustness in data availability.<br><br>Bonus points if you talk about read/write nodes, managing split-brain scenarios in your favourite database technology</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Database</b></td>
+          <td>skill</td>
+          <td>What database would you use for time-series data?</td>
+          <td>Looking for either:<br>- A time-series database like influx or timescale, with the rationale that it's built around time-series data<br>- Using time-series functionality in existing databases like postgres and mongo, because they're more widely used and better supported <br>- Either way, dig into any practical experience if they have it.</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Testing</b></td>
+          <td>skill</td>
+          <td>What are the strengths of manual testing over automated testing, and vice versa? </td>
+          <td>Manual:<br>- good for complex testing that's impossible to automate or need only be performed infrequently.<br>- Exploratory testing allows for more specialised or creative testing outside of the basic test schema, validating more realistic usage.<br><br>Automated:<br>- Can exhaustively, repeatedly validate outputs of software far faster, more accurately, and in more detail than a human can <br><br>Realistically, a balance of both is optimal. </td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Scenario Question</b></td>
+          <td>scenario</td>
+          <td>What do you consider the difference is between the roles of “software engineer” and “software tester”?</td>
+          <td>A good software engineer should take responsibility for the quality of their code, and that includes testing. Similarly, a tester needs to understand the software they're testing; how it should behave, what happens when it's going wrong, and ideally why it goes wrong. <br><br>Incidentally, if a software engineer feels testing is “beneath them” or states something along the lines of “if you wrote good enough code you wouldn't need to test it”, that's a very bad sign.</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Scenario Question</b></td>
+          <td>scenario</td>
+          <td>Tell me about a time you've used IaC tools like Packer or Ansible </td>
+          <td>Looking for a non-trivial project that's got some consideration of:<br>- stability<br>- accessibility<br>- reproducibility<br><br>Be sure to dig into the design choices they've made, and the reasoning behind them</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Pipelines</b></td>
+          <td>skill</td>
+          <td>Can you explain the difference between Continuous Integration and Continuous Deployment?</td>
+          <td>CI: A process where every commit to main is, at the very least, tested automatically. Usually it's also built. <br><br>CD: A process where every commit to main is built, and deployed to either a live service, or released to something like a container registry. </td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Scenario Question</b></td>
+          <td>scenario</td>
+          <td>Explain a time where you've had to interact with a CI/CD pipeline in a significant way (just running it doesn't count). What tooling did you use, and how do you feel about it? </td>
+          <td>Looking for:<br>- having actually written a CI or CD pipeline, or done some significant work to modify or improve it<br>- What tooling are you familiar with? Have you critically evaluated whether this tooling is any good, and is your logic sound?</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Containerisation</b></td>
+          <td>skill</td>
+          <td>What is a container? How does it differ from a VM? </td>
+          <td>Container: a standard unit of software that packages up code and all its dependencies so the application can run quickly and reliably on multiple computing environments. Docker, podman, etc<br><br>VMs virtualise the whole operating system - containers use namespaces to share kernel resources from the host OS</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Containerisation</b></td>
+          <td>skill</td>
+          <td>Why would you containerise software? </td>
+          <td>- portability<br>- dependency encapsulation<br>- orchestration tooling</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Go</b></td>
+          <td>language</td>
+          <td>What's the difference between a buffered and an unbuffered channel in Go?</td>
+          <td>- An unbuffered channel has a capacity of zero, so can only hold a single value at a time<br>- When a value is sent to an unbuffered channel, the sender will block until another goroutine is ready to receive the value - Buffered only blocks when the buffer is full<br>- unbuffered - Receiving blocks until value, enforces synchronisation<br>- buffered - Receiving blocks if empty, allows for async (sender/receiever can proceed as long as buffer isn't full/empty)</td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Frontend</b></td>
+          <td>skill</td>
+          <td>In Next.js what is the advantage of using Serverless mode?</td>
+          <td>- Improved scalability, as serverless functions can automatically scale based on demand.<br>- Cost efficiency, as you only pay for the compute resources you actually use.<br>- Easier deployment and management, as you don't need to manage your own servers or infrastructure.<br>- Faster response times due to the serverless functions being deployed closer to the users.</td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Frontend</b></td>
+          <td>skill</td>
+          <td>What are Web Vitals (LCP, FID, CLS)? And how are they applied in the real world?</td>
+          <td>Web Vitals are standardized metrics to measure the quality of the navigation inside a website:<br>- LCP (Largest Contentful Paint) - LCP measures the time it takes for the largest visible content element to be fully loaded and rendered. A LCP is considered good when it takes less than 2.5 seconds.<br>- FID (First Input Delay) - FID measures the time it takes for the browser to respond to the user's first interaction. A FID is considered good when it takes less than 100 milliseconds.<br>- CLS (Cumulative Layout Shift) - CLS measures the visual stability of a page by calculating the sum of layout shift scores for all unexpected layout shifts during the entire lifespan of the page.</td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Backend</b></td>
+          <td>skill</td>
+          <td>What is a Goroutine in Go and how does it differ from a traditional thread?</td>
+          <td>- Lightweight concurrent execution unit enabling concurrent programming (multiple function to run independently and concurrently<br>- Multiple goroutines can run on a single OS thread in an interleaved manner<br>- Thread count is limited but allows true parallel execution of tasks<br>- Threads are heavier in terms of memory/resource consumption</td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Backend</b></td>
+          <td>skill</td>
+          <td>What's the difference between a buffered and an unbuffered channel in Go?</td>
+          <td>- An unbuffered channel has a capacity of zero, so can only hold a single value at a time<br>- When a value is sent to an unbuffered channel, the sender will block until another goroutine is ready to receive the value - Buffered only blocks when the buffer is full<br>- unbuffered: Receiving blocks until value, enforces synchronisation<br>- buffered: Receiving blocks if empty, allows for async (sender/receiever can proceed as long as buffer isn't full/empty)</td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Scenario Question</b></td>
+          <td>scenario</td>
+          <td>How would you handle a database that's showing instability under load? </td>
+          <td>- Replication<br>- more efficient queries<br>- profiling<br>- review your data model for efficiency: improve cardinality, improve compressibility<br>- If SQL, look into other databases since SQL is (mostly) transferrable between databases<br>- Offload any batch processing to tools like apache spark<br>- Increase resources for the host machine (caveat that this isn't an infinitely scalable solution)</td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Scenario Question</b></td>
+          <td>scenario</td>
+          <td>Assume you've taken over maintenance of a codebase with no tests of any kind. How much of each kind of testing do you prioritise, between unit, integration, e2e, and manual testing? </td>
+          <td>The testing pyramid:<br>- fewest number of manual tests<br>- small number of e2e tests<br>- more integration tests<br>- large number of unit tests<br><br>None of these should necessarily be prioritised over the others - a mix of all of them is best, and the volume is inversely proportional to complexity - unit tests are simplest to write, while good e2e tests can get pretty complex. </td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Containerisation</b></td>
+          <td>skill</td>
+          <td>What is a multi-stage docker build, and why would you use one? </td>
+          <td>A multi-stage build allows you to build on multiple parent images during the build process. For example, you might build and test a binary on a build container with all the necessary build tooling you need, then copy that final binary into a lightweight, security-hardened deployment container.<br><br>This process can also be used to reduce the number of layers in the final docker image. </td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Containerisation</b></td>
+          <td>skill</td>
+          <td>How would you orchestrate the deployment and maintenance of multiple containers?</td>
+          <td>docker-compose, or kubernetes. Bonus points if you can go into the benefits of either:<br><br>dc:<br>- simple<br>- comes free with docker <br><br>k8s:<br>- powerful tool that requires you understand how it works</td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Scenario Question</b></td>
+          <td>scenario</td>
+          <td>Tell me about a time you've used container orchestration tools like docker-compose or kubernetes</td>
+          <td>Looking for a non-trivial project that's got some consideration of:<br>- stability<br>- accessibility<br>- reproducibility<br><br>Be sure to dig into the design choices they've made, and the reasoning behind them</td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        
+      </table>
+       
     </div>
-</body>
-<script>
+  </body>
+  <script>
+    function searchKeyUp() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("searchInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("qandaTable");
+      tr = table.getElementsByTagName("tr");
 
-  function myFunction() {
-    // Declare variables
-    var input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("myTable");
-    tr = table.getElementsByTagName("tr");
-  
-    // Loop through all table rows, and hide those who don't match the search query
-    console.log("hello")
-    console.log(tr.length);
-    for (i = 0; i < tr.length; i++) {
-      console.log(tr[i]);
-      td_el = tr[i].getElementsByTagName("td");
-      td = td_el[2]
-      if (td) {
-        txtValue = td.textContent || td.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          tr[i].style.display = "";
-        } else {
-          tr[i].style.display = "none";
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td_el = tr[i].getElementsByTagName("td");
+        td = td_el[2];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
         }
       }
     }
-  }
-</script>
-<script>
-  function filterTable(category) {
-    if (category == "all") {
-      category = "";
-    }
+  </script>
+  <script>
+    function filterTable(category) {
+      if (category == "all") {
+        category = "";
+      }
 
-    var filter, table, tr, td, i, txtValue;
-    filter = category.toUpperCase();
-    table = document.getElementById("myTable");
-    tr = table.getElementsByTagName("tr");
+      var filter, table, tr, td, i, txtValue;
+      filter = category.toUpperCase();
+      table = document.getElementById("qandaTable");
+      tr = table.getElementsByTagName("tr");
 
-    for (i = 0; i < tr.length; i++) {
-      td_el = tr[i].getElementsByTagName("td");
-      td = td_el[0]
-      if (td) {
-        txtValue = td.textContent || td.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          tr[i].style.display = "";
-        } else {
-          tr[i].style.display = "none";
+      for (i = 0; i < tr.length; i++) {
+        td_el = tr[i].getElementsByTagName("td");
+        td = td_el[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
         }
       }
     }
-  }
 
+    filterSelection("all");
 
-  filterSelection("all")
-function filterSelection(c) {
-  filterTable(c)
+    function filterSelection(c) {
+      filterTable(c);
 
-  var x, i;
-  x = document.getElementsByClassName("filterDiv");
-  if (c == "all") c = "";
-  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
-  for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) {
-      w3AddClass(x[i], "show");
+      var x, i;
+      x = document.getElementsByClassName("filterDiv");
+      if (c == "all") c = "";
+      // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+      for (i = 0; i < x.length; i++) {
+        removeClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) {
+          addClass(x[i], "show");
+        }
+      }
     }
-  }
-}
 
-// Show filtered elements
-function w3AddClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {
-      element.className += " " + arr2[i];
+    // Show filtered elements
+    function addClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {
+          element.className += " " + arr2[i];
+        }
+      }
     }
-  }
-}
 
-// Hide elements that are not selected
-function w3RemoveClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    // Hide elements that are not selected
+    function removeClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+          arr1.splice(arr1.indexOf(arr2[i]), 1);
+        }
+      }
+      element.className = arr1.join(" ");
     }
-  }
-  element.className = arr1.join(" ");
-}
 
-// Add active class to the current control button (highlight it)
-var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
-</script>
+    // Add active class to the current control button (highlight it)
+    var btnContainer = document.getElementById("categoryBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+  </script>
 </html>

@@ -1,13 +1,17 @@
 
-class MyVars:
+class MyDirectories:
+    GENERATED="src/generated/"
+    TEMPLATES="src/templates/"
+    DATA="src/data/"
+
+class MyFiles:
+    class Generated:
+        INDEX=f"{MyDirectories.GENERATED}index.html"
+
     class Template:
         INDEX="base.html"
         
-        @staticmethod
-        def dir() -> str:
-            return "src/templates/"
-        
     class Data:
-        CATEGORIES="src/data/categories.csv"
-        ENTRIES="src/data/entries.csv"
-        SITE="src/data/site.toml"
+        CATEGORIES=f"{MyDirectories.DATA}categories.csv"
+        ENTRIES=f"{MyDirectories.DATA}entries.csv"
+        SITE=f"{MyDirectories.DATA}site.toml"

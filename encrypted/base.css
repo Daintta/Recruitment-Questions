@@ -1,11 +1,3 @@
-.startupBody {
-  background-color: black;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 2;
-  padding: 10px;
-}
 
 .container {
   overflow: hidden;
@@ -13,7 +5,7 @@
 
 .filterDiv {
   float: left;
-  background-color: #2196F3;
+  background-color: #2196f3;
   color: #ffffff;
   width: 100px;
   line-height: 100px;
@@ -51,40 +43,38 @@
   color: white;
 }
 
-input {
+#searchInput {
   background-size: 10px 10px;
   font-size: 16px; /* Increase font-size */
-  padding: 12px 20px 12px 20px; /* Add some padding */
+  padding: 12px 20px 12px 40px; /* Add some padding */
   border: 1px solid #ddd; /* Add a grey border */
   margin-bottom: 12px; /* Add some space below the input */
+  background-image: url("https://static-00.iconduck.com/assets.00/search-icon-1024x1024-hd1pcvqu.png"); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
 }
 
-  #myInput {
-    background-image: url('https://static-00.iconduck.com/assets.00/search-icon-1024x1024-hd1pcvqu.png'); /* Add a search icon to input */
-    background-position: 10px 12px; /* Position the search icon */
-    background-repeat: no-repeat; /* Do not repeat the icon image */
-    width: 100%; /* Full-width */
-    padding: 12px 20px 12px 40px; /* Add some padding */
-  }
-  
-  #myTable {
-    border-collapse: collapse; /* Collapse borders */
-    width: 100%; /* Full-width */
-    border: 1px solid #ddd; /* Add a grey border */
-    font-size: 18px; /* Increase font-size */
-  }
-  
-  #myTable th, #myTable td {
-    text-align: left; /* Left-align text */
-    padding: 12px; /* Add padding */
-  }
-  
-  #myTable tr {
-    /* Add a bottom border to all table rows */
-    border-bottom: 1px solid #ddd;
-  }
-  
-  #myTable tr.header, #myTable tr:hover {
-    /* Add a grey background color to the table header and on hover */
-    background-color: #f1f1f1;
-  }
+#qandaTable {
+  border-collapse: collapse; /* Collapse borders */
+  width: 100%; /* Full-width */
+  border: 1px solid #ddd; /* Add a grey border */
+  font-size: 18px; /* Increase font-size */
+}
+
+#qandaTable th,
+#qandaTable td {
+  text-align: left; /* Left-align text */
+  padding: 12px; /* Add padding */
+}
+
+#qandaTable tr {
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd;
+}
+
+#qandaTable tr.header,
+#qandaTable tr:hover {
+  /* Add a grey background color to the table header and on hover */
+  background-color: #f1f1f1;
+}
