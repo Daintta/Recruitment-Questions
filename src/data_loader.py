@@ -1,7 +1,7 @@
 from typing import Self
 from pydantic import BaseModel
 
-from var import MyVars
+from var import MyFiles
 from models import Category, Entry, Site
 
 class Data(BaseModel):
@@ -13,11 +13,11 @@ class Data(BaseModel):
     @staticmethod
     def parse(cfile: str, efile: str, tfile: str) -> Self:
         categories = sorted(Category.parse(cfile), key=lambda x: x.name)
-        entries = Entry.parse(efile, categories)
-        sorted_entries = sorted(entries, key=lambda x: x.difficulty)
+        entries = sorted(Entry.parse(efile, categories), key=lambda x: x.difficulty)
+        
         return Data(
             categories = categories,
-            entries = sorted_entries,
+            entries = entries,
             site = Site.parse(tfile)
         )
     
@@ -32,5 +32,5 @@ class DataLoader:
     
     data: Data
     
-    def __init__(self, cfile: str = MyVars.Data.CATEGORIES, efile: str = MyVars.Data.ENTRIES, tfile: str = MyVars.Data.SITE):
+    def __init__(self, cfile: str = MyFiles.Data.CATEGORIES, efile: str = MyFiles.Data.ENTRIES, tfile: str = MyFiles.Data.SITE):
         self.data = Data.parse(cfile, efile, tfile)

@@ -11,17 +11,14 @@ class Category(BaseModel):
     
     @staticmethod
     def parse(cfile: str) -> list[Self]:
-        categories = []
-        cf_conts = MyUtil.File.read_csv(cfile)
-        for c in cf_conts:
-            categories.append(
-                Category(
-                    id=c[0],
-                    type=c[1],
-                    name=c[2]
-                )
+        return [
+            Category(
+                id=c[0],
+                type=c[1],
+                name=c[2]
             )
-        return categories
+            for c in MyUtil.File.read_csv(cfile)
+        ]
     
     @staticmethod
     def search(id: str, categories: list[Self]) -> Self | None:
@@ -40,20 +37,17 @@ class Entry(BaseModel):
     
     @staticmethod
     def parse(efile: str, categories: list[Category]) -> list[Self]:
-        entries = []
-        f_conts = MyUtil.File.read_csv(efile)
-        for r in f_conts:
-            entries.append(
-                Entry(
-                    id=r[0],
-                    category_id=r[1],
-                    question=r[2],
-                    answer=r[3],
-                    difficulty=int(r[4]),
-                    category=Category.search(id=r[1], categories=categories)
-                )
+        return [
+            Entry(
+                id=r[0],
+                category_id=r[1],
+                question=r[2],
+                answer=r[3],
+                difficulty=int(r[4]),
+                category=Category.search(id=r[1], categories=categories)
             )
-        return entries
+            for r in MyUtil.File.read_csv(efile)
+        ]
     
 class Site(BaseModel):
     class Metadata(BaseModel):
@@ -72,9 +66,5 @@ class Site(BaseModel):
     def parse(tfile: str) -> Self:
         toml = MyUtil.File.read_toml(tfile)
         metadata = Site.Metadata(**toml["metadata"])
-        content = []
-        for ctnt in toml["content"]:
-            content.append(
-                Site.Content(**ctnt)
-            )
+        content = [Site.Content(**ctnt) for ctnt in toml["content"]]
         return Site(metadata=metadata,content=content)
