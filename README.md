@@ -27,3 +27,18 @@ make install
 ```
 make ro
 ```
+
+## Encrypt HTML
+1. Install node and npm
+2. Install staticrypt
+```
+npm install -g staticrypt
+```
+3. Create password
+```
+export STATICRYPT_PASSWORD=test-test-test-test
+```
+3. Encrypt file
+```
+make encrypt
+```

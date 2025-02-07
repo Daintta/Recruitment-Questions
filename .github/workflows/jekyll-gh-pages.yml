@@ -2,11 +2,9 @@
 name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 
 on:
-  # Runs after build push HTML pipeline
-  workflow_run:
-    workflows: [Build and push HTML]
-    types:
-      - completed
+  push:
+    branches:
+      - main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:

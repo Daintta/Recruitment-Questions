@@ -5,13 +5,9 @@
     <link rel="icon" href="https://media.licdn.com/dms/image/v2/C4E0BAQGsAbjgoRNhkQ/company-logo_200_200/company-logo_200_200/0/1630591821102/daintta_logo?e=2147483647&v=beta&t=7rHqajLmeo7_LohDWc8kS3WEjzR8s-fiuCt_2Cv7fo4" type="image/png">
     <link rel="stylesheet" href="base.css">
 </head>
-<body id="body" class="startupBody">
-    <div id="startupDiv" class="show">
-      <input type="text" id="startupInput" placeholder="Enter password...">
-      <button class="btn" onclick="login()">Enter Realm</button>
-    </div>
-    <div id="mainDiv" class="hide">
-      <h1>Daintta Software Engineering - Recruitment (v0.0.2)</h1>
+<body id="body">
+    <div id="mainDiv">
+      <h1>Daintta Software Engineering - Recruitment (v0.0.1)</h1>
 
       
           
@@ -591,18 +587,6 @@ for (var i = 0; i < btns.length; i++) {
     current[0].className = current[0].className.replace(" active", "");
     this.className += " active";
   });
-}
-
-function login() {
-  key = document.getElementById("startupInput").value;
-  if (btoa(key) == "VHJhbnNwYXJlbnQtRmFpci1EYXJpbmc=") {
-    tohide = document.getElementById("startupDiv");
-    toshow = document.getElementById("mainDiv");
-    body = document.getElementById("body");
-    w3RemoveClass(toshow, "hide");
-    w3AddClass(tohide, "hide");
-    w3RemoveClass(body, "startupBody")
-  }
 }
 </script>
 </html>

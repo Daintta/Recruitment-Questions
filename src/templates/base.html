@@ -5,12 +5,8 @@
     <link rel="icon" href="{{ site.metadata.icon }}" type="image/png">
     <link rel="stylesheet" href="base.css">
 </head>
-<body id="body" class="startupBody">
-    <div id="startupDiv" class="show">
-      <input type="text" id="startupInput" placeholder="Enter password...">
-      <button class="btn" onclick="login()">Enter Realm</button>
-    </div>
-    <div id="mainDiv" class="hide">
+<body id="body">
+    <div id="mainDiv">
       <h1>{{ site.metadata.name }} ({{ site.metadata.version }})</h1>
 
       {% for item in site.content %}
@@ -151,18 +147,6 @@ for (var i = 0; i < btns.length; i++) {
     current[0].className = current[0].className.replace(" active", "");
     this.className += " active";
   });
-}
-
-function login() {
-  key = document.getElementById("startupInput").value;
-  if (btoa(key) == "VHJhbnNwYXJlbnQtRmFpci1EYXJpbmc=") {
-    tohide = document.getElementById("startupDiv");
-    toshow = document.getElementById("mainDiv");
-    body = document.getElementById("body");
-    w3RemoveClass(toshow, "hide");
-    w3AddClass(tohide, "hide");
-    w3RemoveClass(body, "startupBody")
-  }
 }
 </script>
 </html>
