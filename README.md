@@ -8,7 +8,14 @@ A repository for deploying SWE recruitment Qs & As to a website.
 1. Go to `src/data/entries.csv`, and add a new entry
 
 ### Add New Categories
-1. Go to `src/data/categories.csb`, and add a new entry
+1. Go to `src/data/categories.csv`, and add a new entry
+
+## Prerequisites
+1. Install node and npm
+2. Install staticrypt
+```
+npm install -g staticrypt
+```
 
 ## Local Build
 1. Setup venv
@@ -23,22 +30,11 @@ source venv/bin/activate
 ```
 make install
 ```
-4. Run & Open
-```
-make ro
-```
-
-## Encrypt HTML
-1. Install node and npm
-2. Install staticrypt
-```
-npm install -g staticrypt
-```
-3. Create password
+4. Create password
 ```
 export STATICRYPT_PASSWORD=test-test-test-test
 ```
-3. Encrypt file
+5. Build & Open Locally
 ```
-make encrypt
+make ro
 ```
