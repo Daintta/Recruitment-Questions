@@ -14,6 +14,6 @@ template = MyVars.Template.INDEX
 html_template = env.get_template(template)
 html = html_template.render(**dl.data.model_dump())
 
-print(html)
+# print(html)
 
 MyUtil.File.write(f"src/generated/index.html", html)

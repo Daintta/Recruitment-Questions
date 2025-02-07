@@ -2,13 +2,11 @@
 name: Build and push HTML
 
 on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+permissions:
+  contents: write
 
 jobs:
   # Build job
@@ -23,6 +21,14 @@ jobs:
               source venv/bin/activate
               pip install -r requirements.txt
               python3.12 src/__init__.py
-              ls
-              cat src/generated/index.html
-              
+
+      # Commit and push changes
+      - name: Commit changes
+        run: |
+          git config --local user.name "Daintta Bot"
+          git config --local user.email "harry.wixley@daintta.com"
+          export BRANCH=$(git symbolic-ref --short HEAD)
+          git pull origin ${BRANCH}
+          git add src/generated/index.html
+          git commit -m "GH-Action: auto-update HTML"
+          git push origin ${BRANCH}
