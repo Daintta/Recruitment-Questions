@@ -12,11 +12,11 @@
       {% for item in site.content %} {% if item.type == "csv_table" %}
       <input
         type="text"
-        id="myInput"
+        id="searchInput"
         onkeyup="searchKeyUp()"
         placeholder="Search.."
       />
-      <div id="myBtnContainer">
+      <div id="categoryBtnContainer">
         <button class="btn active" onclick="filterSelection('all')">
           Show all
         </button>
@@ -27,7 +27,7 @@
         {% endfor %}
       </div>
       <br />
-      <table id="myTable">
+      <table id="qandaTable">
         <tr class="header">
           <th style="width: 10%">Category</th>
           <th style="width: 10%">Category Type</th>
@@ -54,9 +54,9 @@
     function searchKeyUp() {
       // Declare variables
       var input, filter, table, tr, td, i, txtValue;
-      input = document.getElementById("myInput");
+      input = document.getElementById("searchInput");
       filter = input.value.toUpperCase();
-      table = document.getElementById("myTable");
+      table = document.getElementById("qandaTable");
       tr = table.getElementsByTagName("tr");
 
       // Loop through all table rows, and hide those who don't match the search query
@@ -82,7 +82,7 @@
 
       var filter, table, tr, td, i, txtValue;
       filter = category.toUpperCase();
-      table = document.getElementById("myTable");
+      table = document.getElementById("qandaTable");
       tr = table.getElementsByTagName("tr");
 
       for (i = 0; i < tr.length; i++) {
@@ -142,7 +142,7 @@
     }
 
     // Add active class to the current control button (highlight it)
-    var btnContainer = document.getElementById("myBtnContainer");
+    var btnContainer = document.getElementById("categoryBtnContainer");
     var btns = btnContainer.getElementsByClassName("btn");
     for (var i = 0; i < btns.length; i++) {
       btns[i].addEventListener("click", function () {
