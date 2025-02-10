@@ -51,6 +51,10 @@
           IaC
         </button>
         
+        <button class="btn" onclick="filterSelection('Java')">
+          Java
+        </button>
+        
         <button class="btn" onclick="filterSelection('Pipelines')">
           Pipelines
         </button>
@@ -427,6 +431,30 @@
         </tr>
         
         <tr>
+          <td><b>Java</b></td>
+          <td>language</td>
+          <td>What is the difference between overloading and overriding?</td>
+          <td>Overloading is a term used to describe when two methods have the same name but differ in the type or number of arguments. Overriding occurs when a method shares the same name and function signature as another method in its super class.</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Java</b></td>
+          <td>language</td>
+          <td>In terms of inheritance, what is the effect of keeping a constructor private?</td>
+          <td>Declaring a private constructor means that you can only access the (private) constructor if you could also access the class' private methods i.e. only inner classes of the class with the private constructor can access it. Additionally, if a class with a private constructor is itself an inner class, then the other inner classes of the parent class can also access it. Since a subclass calls its parent's constructor, the class with a private constructor can be inherited, but only by its own or its parent's inner classes.</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Java</b></td>
+          <td>language</td>
+          <td>What is the difference between final, finally, and finalize?</td>
+          <td>The `final` keyword is used to control the 'changeability' a variable (when primitive, cannot be changed; when reference, object being pointed to on the heap cannot be changed), method (cannot be overridden), or class (cannot be subclassed). The `finally` keyword is used in a `try`-`catch` block to ensure that a segment of code is always executed. The `finalize()` method is called by the garbage collector once it determines that no more references exist.</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
           <td><b>Go</b></td>
           <td>language</td>
           <td>What's the difference between a buffered and an unbuffered channel in Go?</td>
@@ -503,6 +531,14 @@
           <td>scenario</td>
           <td>Tell me about a time you've used container orchestration tools like docker-compose or kubernetes</td>
           <td>Looking for a non-trivial project that's got some consideration of:<br>- stability<br>- accessibility<br>- reproducibility<br><br>Be sure to dig into the design choices they've made, and the reasoning behind them</td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Java</b></td>
+          <td>language</td>
+          <td>Explain what object refection is in Java and why it is useful?</td>
+          <td>A feature that provides a way to get reflective information about Java classes and objects, and perform operations such as:<br>- Getting information about the methods and fields present inside the class at runtime.<br>- Creating a new instance of a class.<br>- Getting and setting the object fields directly by getting field reference, regardless of what the access modifier is.<br><br>The three main ways this is useful are:<br>- It can help observe or manipulate the runtime behaviour of applications.<br>- It can help debug or tests programs as you have direct access to methods, constructors. and fields.<br>- Methods can be called by name when you don't know the method in advance e.g. it could allow a user to pass in a class name, parameters for the constructor, and a method name to create an object and call a method.</td>
           <td>⭐⭐⭐</td>
         </tr>
         

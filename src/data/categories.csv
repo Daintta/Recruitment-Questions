@@ -1,6 +1,7 @@
 id,type,name
 lang_py,language,Python
 lang_go,language,Go
+lang_java,language,Java
 skill_frontend,skill,Frontend
 skill_backend,skill,Backend
 skill_db,skill,Database
