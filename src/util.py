@@ -17,7 +17,7 @@ class MyUtil:
             except Exception as e:
                 print(e)
                 return None
-            
+
         @staticmethod
         def read_toml(path) -> dict | None:
             try:
@@ -26,7 +26,7 @@ class MyUtil:
             except Exception as e:
                 print(e)
                 return None
-            
+
         @staticmethod
         def write(path, contents):
             try:
