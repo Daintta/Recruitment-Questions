@@ -3,7 +3,7 @@ name: Build and push HTML
 
 on:
   pull_request:
-    types: [opened]
+    types: [opened, edited]
   workflow_dispatch:
 
 permissions:
