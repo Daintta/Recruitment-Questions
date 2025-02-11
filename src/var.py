@@ -10,7 +10,7 @@ class MyFiles:
 
     class Template:
         INDEX="base.html"
-        
+
     class Data:
         CATEGORIES=f"{MyDirectories.DATA}categories.csv"
         ENTRIES=f"{MyDirectories.DATA}entries.csv"

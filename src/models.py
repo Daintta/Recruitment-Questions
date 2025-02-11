@@ -8,7 +8,7 @@ class Category(BaseModel):
     id: str
     type: str
     name: str
-    
+
     @staticmethod
     def parse(cfile: str) -> list[Self]:
         return [
@@ -19,14 +19,14 @@ class Category(BaseModel):
             )
             for c in MyUtil.File.read_csv(cfile)
         ]
-    
+
     @staticmethod
     def search(id: str, categories: list[Self]) -> Self | None:
         for c in categories:
             if id == c.id:
                 return c
         return None
-    
+
 class Entry(BaseModel):
     id: str
     category_id: str
@@ -34,7 +34,7 @@ class Entry(BaseModel):
     answer: str
     difficulty: int
     category: Category | None = None
-    
+
     @staticmethod
     def parse(efile: str, categories: list[Category]) -> list[Self]:
         return [
@@ -48,20 +48,20 @@ class Entry(BaseModel):
             )
             for r in MyUtil.File.read_csv(efile)
         ]
-    
+
 class Site(BaseModel):
     class Metadata(BaseModel):
         name: str
         version: str
         icon: str = ""
-    
+
     class Content(BaseModel):
         type: str
         contents: str = ""
-        
+
     metadata: Metadata
     content: list[Content]
-    
+
     @staticmethod
     def parse(tfile: str) -> Self:
         toml = MyUtil.File.read_toml(tfile)
