@@ -2,7 +2,8 @@
 name: Build and push HTML
 
 on:
-  # Allows you to run this workflow manually from the Actions tab
+  pull_request:
+    types: [opened]
   workflow_dispatch:
 
 permissions:
@@ -15,14 +16,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install deps
+      - name: Install Python deps
         run: |
               python3.12 -m venv venv
               source venv/bin/activate
-              pip install -r requirements.txt
-              python3.12 src/__init__.py
-
-      # Commit and push changes
+              make install
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install Node deps
+        run: |
+              npm install -g staticrypt
+      - name: Setup Env & Run
+        run: |
+              export STATICRYPT_PASSWORD=${{ secrets.STATICRYPT_PASSWORD }}
+              make run
       - name: Commit changes
         run: |
           git config --local user.name "Daintta Bot"
