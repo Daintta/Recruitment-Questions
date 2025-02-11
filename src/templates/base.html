@@ -198,8 +198,12 @@
       if (id === "random") {
         qandaTable = document.getElementById("qandaTable")
         rows = qandaTable.getElementsByTagName("tr");
-        N = rows.length
+        filtered_rows = Object.values(rows).filter(function(item) {
+          return item.style.display != "none"
+        })
+        N = filtered_rows.length
         random_sample = randomIntFromInterval(1, N)
+        sample = filtered_rows[random_sample]
 
         table = document.getElementById("randomQandaTable")
         table_rows = table.getElementsByTagName("tr")
@@ -208,8 +212,9 @@
             table_rows[i].remove()
           }
         }
-        // table.tr = table_tr[0]
-        table.append(rows[random_sample])
+        if (sample !== undefined) {
+          table.append(sample.cloneNode(true))
+        }
       }
     }
   </script>
