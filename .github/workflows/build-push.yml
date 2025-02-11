@@ -37,7 +37,7 @@ jobs:
           git config --local user.name "Daintta Bot"
           git config --local user.email "harry.wixley@daintta.com"
           git fetch origin
-          export BRANCH=$(git rev-parse --abbrev-ref HEAD)
+          export BRANCH=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
           echo "BRANCH: !! ${BRANCH} !!"
           git pull origin ${BRANCH}
           git add src/generated/index.html encrypted/index.html
