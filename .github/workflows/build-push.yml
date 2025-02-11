@@ -30,6 +30,7 @@ jobs:
       - name: Setup Env & Run
         run: |
               export STATICRYPT_PASSWORD=${{ secrets.STATICRYPT_PASSWORD }}
+              source venv/bin/activate
               make run
       - name: Commit changes
         run: |
