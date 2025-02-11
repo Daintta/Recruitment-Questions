@@ -55,6 +55,10 @@
           Java
         </button>
         
+        <button class="btn" onclick="filterSelection('Patterns')">
+          Patterns
+        </button>
+        
         <button class="btn" onclick="filterSelection('Pipelines')">
           Pipelines
         </button>
@@ -463,6 +467,30 @@
           <td>language</td>
           <td>What is the difference between final, finally, and finalize?</td>
           <td>The `final` keyword is used to control the 'changeability' a variable (when primitive, cannot be changed; when reference, object being pointed to on the heap cannot be changed), method (cannot be overridden), or class (cannot be subclassed). The `finally` keyword is used in a `try`-`catch` block to ensure that a segment of code is always executed. The `finalize()` method is called by the garbage collector once it determines that no more references exist.</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Patterns</b></td>
+          <td>patterns</td>
+          <td>Explain what is meant by a Singleton Pattern.</td>
+          <td>Allow the candidate to explain with a brief example if they prefer, but their supporting explanation should also cover most of the points in this box. The Singleton Pattern ensures that a class has only one instance and ensures access to the instance through the application. It can be useful in cases where you have a 'global' object with exactly one instance. Some consider the Singleton design pattern an anti-pattern. One reason for this is that it can interfere with unit testing.</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Patterns</b></td>
+          <td>patterns</td>
+          <td>Explain what is meant by a Factory Method.</td>
+          <td>Allow the candidate to explain with a brief example if they prefer, but their supporting explanation should also cover most of the points in this box. The Factory Method offers an interface for creating an instance of a class, but allows its subclasses to decide which class/type of object to instantiate. Instead of calling a constructor directly to create an object, the Factory Method delegates this responsibility to subclasses, promoting loose coupling and enhancing flexibility. This approach allows the client code to work with abstract types and delegate the instantiation logic to subclasses.</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Patterns</b></td>
+          <td>patterns</td>
+          <td>Explain what is meant by a Builder Pattern.</td>
+          <td>Allow the candidate to explain with a brief example if they prefer, but their supporting explanation should also cover most of the points in this box. The Builder Pattern allows for the step-by-step construction of complex objects. It separates the construction of an object from its representation, enabling the same construction process to create different representations. This pattern is particularly useful when an object needs to be created with many optional parameters or when the construction process is complex. This separation of concerns makes the construction process more flexible and manageable.</td>
           <td>⭐⭐</td>
         </tr>
         

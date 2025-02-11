@@ -13,3 +13,4 @@ skill_iac,skill,IaC
 skill_pipelines,skill,Pipelines
 scenario_type,scenario,Scenario Question
 theory_threads,theory,Threads
+theory_patterns,patterns,Patterns
