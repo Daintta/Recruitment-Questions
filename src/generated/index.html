@@ -738,7 +738,7 @@
           return item.style.display != "none"
         })
         N = filtered_rows.length
-        random_sample = randomIntFromInterval(1, N)
+        random_sample = randomIntFromInterval(1, N-1)
         sample = filtered_rows[random_sample]
 
         table = document.getElementById("randomQandaTable")
