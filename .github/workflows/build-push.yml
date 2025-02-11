@@ -36,7 +36,8 @@ jobs:
         run: |
           git config --local user.name "Daintta Bot"
           git config --local user.email "harry.wixley@daintta.com"
-          git pull
-          git add src/generated/index.html encrypted/index.html
+          if git rev-parse --git-dir > /dev/null 2>&1; then export BRANCH=$(git symbolic-ref --short HEAD); fi
+          git pull origin ${BRANCH}
+          git add src/generated/index.html
           git commit -m "GH-Action: auto-update HTML"
-          git push
+          git push origin ${BRANCH}
