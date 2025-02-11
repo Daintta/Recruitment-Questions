@@ -36,7 +36,8 @@ jobs:
         run: |
           git config --local user.name "Daintta Bot"
           git config --local user.email "harry.wixley@daintta.com"
-          if git rev-parse --git-dir > /dev/null 2>&1; then export BRANCH=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p'); fi
+          export BRANCH=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+          echo $BRANCH
           git pull origin ${BRANCH}
           git add src/generated/index.html
           git commit -m "GH-Action: auto-update HTML"
