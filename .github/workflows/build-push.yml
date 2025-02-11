@@ -38,8 +38,8 @@ jobs:
           git config --local user.email "harry.wixley@daintta.com"
           git fetch origin
           export BRANCH=$(git rev-parse --abbrev-ref HEAD)
-          echo ${BRANCH}
+          echo "BRANCH: !! ${BRANCH} !!"
           git pull origin ${BRANCH}
-          git add src/generated/index.html
+          git add src/generated/index.html encrypted/index.html
           git commit -m "GH-Action: auto-update HTML"
           git push origin ${BRANCH}
