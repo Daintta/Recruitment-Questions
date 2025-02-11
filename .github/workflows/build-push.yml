@@ -2,7 +2,8 @@
 name: Build and push HTML
 
 on:
-  # Allows you to run this workflow manually from the Actions tab
+  pull_request:
+    types: [opened, synchronize, edited, ready_for_review]
   workflow_dispatch:
 
 permissions:
@@ -15,20 +16,33 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install deps
+      - name: Install Python deps
         run: |
               python3.12 -m venv venv
               source venv/bin/activate
-              pip install -r requirements.txt
-              python3.12 src/__init__.py
-
-      # Commit and push changes
+              make install
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install Node deps
+        run: |
+              npm install -g staticrypt
+      - name: Setup Env & Run
+        run: |
+              export STATICRYPT_PASSWORD=${{ secrets.STATICRYPT_PASSWORD }}
+              source venv/bin/activate
+              make run
+      - name: Extract branch name
+        shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
       - name: Commit changes
         run: |
           git config --local user.name "Daintta Bot"
           git config --local user.email "harry.wixley@daintta.com"
-          export BRANCH=$(git symbolic-ref --short HEAD)
-          git pull origin ${BRANCH}
-          git add src/generated/index.html
+          git fetch origin
+          export BRANCH="${{ steps.extract_branch.outputs.branch }}"
+          git checkout ${BRANCH}
+          git add src/generated/index.html encrypted/index.html
           git commit -m "GH-Action: auto-update HTML"
           git push origin ${BRANCH}
