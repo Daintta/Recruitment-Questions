@@ -6,7 +6,12 @@
     <link rel="stylesheet" href="base.css" />
   </head>
   <body id="body">
-    <div id="mainDiv">
+    <div id="sideNav" class="sidenav">
+      <a id="mainDivNavBtn" onclick="showPage('mainDiv')" class="selectedNav">Q&A</a>
+      <a id="randomNavBtn" onclick="showPage('random')">Random Question</a>
+      <a id="linksNavBtn" onclick="showPage('links')">Links</a>
+    </div>
+    <div id="mainDiv" class="main">
       <h1>{{ site.metadata.name }} ({{ site.metadata.version }})</h1>
 
       {% for item in site.content %} {% if item.type == "csv_table" %}
@@ -27,7 +32,7 @@
         {% endfor %}
       </div>
       <br />
-      <table id="qandaTable">
+      <table id="qandaTable" class="qandaTable">
         <tr class="header">
           <th style="width: 10%">Category</th>
           <th style="width: 10%">Category Type</th>
@@ -48,6 +53,24 @@
       {% else %}
       <p>{{ item.contents }}</p>
       {% endif %} {% endfor %}
+    </div>
+    <div id="random" class="main hide">
+      <h1>Random Question</h1>
+      <table id="randomQandaTable" class="qandaTable">
+        <tr class="header">
+          <th style="width: 10%">Category</th>
+          <th style="width: 10%">Category Type</th>
+          <th style="width: 35%">Question</th>
+          <th style="width: 35%">Answer</th>
+          <th style="width: 10%">Difficulty</th>
+        </tr>
+      </table>
+    </div>
+    <div id="links" class="main hide">
+      <h1>Links</h1>
+      <a href="https://daintta.sharepoint.com/sites/Intranet/SitePages/recruitment2.aspx?csf=1&web=1&e=4BpJEf">Intranet - Recruitment</a>
+      <br><br>
+      <a href="https://daintta.sharepoint.com/sites/Daintta/_layouts/15/guestaccess.aspx?share=Egknu2bfOktCrnWVJzjhT-IBD3JJJkXObnpifqKoxlAU1g&e=SfuZKS">SharePoint - Interview Templates</a>
     </div>
   </body>
   <script>
@@ -150,6 +173,44 @@
         current[0].className = current[0].className.replace(" active", "");
         this.className += " active";
       });
+    }
+    function randomIntFromInterval(min, max) { // min and max included 
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    function hidePages() {
+      parent = document.getElementById("sideNav")
+      for (const child of parent.children) {
+        el = document.getElementById(child.id.replace("NavBtn", ""))
+        addClass(el, "hide")
+        el_btn = document.getElementById(child.id)
+        removeClass(el_btn, "selectedNav")
+      }
+    }
+
+    function showPage(id) {
+      hidePages()
+      el = document.getElementById(id)
+      el_btn = document.getElementById(id + "NavBtn")
+      removeClass(el, "hide")
+      addClass(el_btn, "selectedNav")
+
+      if (id === "random") {
+        qandaTable = document.getElementById("qandaTable")
+        rows = qandaTable.getElementsByTagName("tr");
+        N = rows.length
+        random_sample = randomIntFromInterval(1, N)
+
+        table = document.getElementById("randomQandaTable")
+        table_rows = table.getElementsByTagName("tr")
+        for (let i = 0; i < table_rows.length; i++) {
+          if (i > 0) {
+            table_rows[i].remove()
+          }
+        }
+        // table.tr = table_tr[0]
+        table.append(rows[random_sample])
+      }
     }
   </script>
 </html>
