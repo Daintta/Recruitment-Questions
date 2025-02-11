@@ -32,19 +32,13 @@ jobs:
               export STATICRYPT_PASSWORD=${{ secrets.STATICRYPT_PASSWORD }}
               source venv/bin/activate
               make run
-      - name: Extract branch name
-        shell: bash
-        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
-        id: extract_branch
       - name: Commit changes
         run: |
           git config --local user.name "Daintta Bot"
           git config --local user.email "harry.wixley@daintta.com"
-          git fetch origin
-          export BRANCH="${{ steps.extract_branch.outputs.branch }}"
+          export BRANCH=$(git symbolic-ref --short HEAD)
           echo "BRANCH: !! ${BRANCH} !!"
-          git checkout -b ${BRANCH}
-          git pull
+          git pull origin ${BRANCH}
           git add src/generated/index.html encrypted/index.html
           git commit -m "GH-Action: auto-update HTML"
           git push origin ${BRANCH}
