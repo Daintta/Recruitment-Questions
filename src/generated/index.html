@@ -119,7 +119,7 @@
           <td><b>Python</b></td>
           <td>language</td>
           <td>When would you use a set over a list or tuple?</td>
-          <td>You would use a set when you're interested in whether you have seen certain data before, sets have faster access speeds than lists because they use hashing.<br><br>BONUS: mention of set O(1) vs list/tuple O(n)</td>
+          <td>A set is best used when you want a collection of non-repeating, immutable entries. You would use a set when you're interested in whether you have seen certain data before. Sets also have faster access speeds than lists because they use hashing.<br><br>BONUS: mention of set O(1) vs list/tuple O(n)</td>
           <td>⭐</td>
         </tr>
         
@@ -200,6 +200,46 @@
           <td>skill</td>
           <td>Define end-to-end testing</td>
           <td>Tests that validate the complete data flow or operation of the program. These are often the most complex to write</td>
+          <td>⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Pipelines</b></td>
+          <td>skill</td>
+          <td>what are the main benefits of running CI pipelines?</td>
+          <td>- You automatically, continuously validate your code works to a defined standard<br>- constant, visible feedback on the state of the code (usually including basic analytics automatically, e.g. flaky test tracking)<br>- ensures tests/builds get run regularly</td>
+          <td>⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Java</b></td>
+          <td>language</td>
+          <td>How do you handle exceptions in Java?</td>
+          <td>try/catch/finally block (no worries if they say something like try/except, since it's very common syntax). Look for the following:<br>- using the correct exception types, instead of raw Exception<br>- encapsulating exceptions only where necessary, instead of trapping the entire function<br>- handling errors/exceptions at the lowest level possible, rather than allowing them to bubble up.</td>
+          <td>⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Java</b></td>
+          <td>language</td>
+          <td>Why does access control matter? (private/package_private/public etc)</td>
+          <td>Access control gives a programmer control over the interface they're writing, allowing them to provide a limited set of public functionality that other programmers can assume is functional, stable, and well-tested, while the more flexible and changeable elements of the software can be encapsulated away from users so developers can change them as they require.</td>
+          <td>⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Java</b></td>
+          <td>language</td>
+          <td>What does the 'static' keyword do? Where would you use it?</td>
+          <td>Defines variables or functions that belong to the class itself, rather than instances of the class. It's used when you don't need to create an object to implement the required functionality</td>
+          <td>⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Java</b></td>
+          <td>language</td>
+          <td>Why are lambdas useful in Java?</td>
+          <td>They allow you to define simple, quick inline functions that don't need to be reused.</td>
           <td>⭐</td>
         </tr>
         
@@ -390,6 +430,14 @@
         <tr>
           <td><b>Database</b></td>
           <td>skill</td>
+          <td>Can you please detail best practices for database backups</td>
+          <td>Any sane strategy will do, but look for:<br>- regular backups<br>- testing regular restores<br>- offline backups<br>- encryption</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Database</b></td>
+          <td>skill</td>
           <td>What database would you use for time-series data?</td>
           <td>Looking for either:<br>- A time-series database like influx or timescale, with the rationale that it's built around time-series data<br>- Using time-series functionality in existing databases like postgres and mongo, because they're more widely used and better supported <br>- Either way, dig into any practical experience if they have it.</td>
           <td>⭐⭐</td>
@@ -446,8 +494,8 @@
         <tr>
           <td><b>Containerisation</b></td>
           <td>skill</td>
-          <td>Why would you containerise software? </td>
-          <td>- portability<br>- dependency encapsulation<br>- orchestration tooling</td>
+          <td>Why would you containerise software?</td>
+          <td>- portability<br>- dependency encapsulation<br>- orchestration tooling  <br><br>Bonus: detail areas where containerisation isn't optimal. This includes areas where you could use simpler tools like systemd, or where it's not appropriate, such as embedded. </td>
           <td>⭐⭐</td>
         </tr>
         
@@ -456,6 +504,14 @@
           <td>language</td>
           <td>What is the difference between overloading and overriding?</td>
           <td>Overloading is a term used to describe when two methods have the same name but differ in the type or number of arguments. Overriding occurs when a method shares the same name and function signature as another method in its super class.</td>
+          <td>⭐⭐</td>
+        </tr>
+        
+        <tr>
+          <td><b>Java</b></td>
+          <td>language</td>
+          <td>Explain how the Java Garbage Collector works</td>
+          <td>Scans heap memory looking for objects that are no longer referenced by the program and removes them.<br><br>Bonus: Talk about marking, sweeping, compacting, incremental/full GC, eden/survivor/tenure space <br>Bonus: a reasonably sophisticated discussion of the benefits and disadvantages of GC<br>Bonus: talk about optimisation by handling object references manually, including reusing object references or dereferencing where possible.</td>
           <td>⭐⭐</td>
         </tr>
         
@@ -471,7 +527,7 @@
           <td><b>Java</b></td>
           <td>language</td>
           <td>What is the difference between final, finally, and finalize?</td>
-          <td>The `final` keyword is used to control the 'changeability' a variable (when primitive, cannot be changed; when reference, object being pointed to on the heap cannot be changed), method (cannot be overridden), or class (cannot be subclassed). The `finally` keyword is used in a `try`-`catch` block to ensure that a segment of code is always executed. The `finalize()` method is called by the garbage collector once it determines that no more references exist.</td>
+          <td>The `final` keyword is used to control the 'changeability' a variable (when primitive, cannot be changed; when reference, object being pointed to on the heap cannot be changed), method (cannot be overridden), or class (cannot be subclassed). The `finally` keyword is used in a `try`-`catch` block to ensure that a segment of code is always executed. The `finalize()` method is called by the garbage collector once it determines that no more references exist. It was also deprecated in Java 9 because it's error-prone and difficult to use correctly. </td>
           <td>⭐⭐</td>
         </tr>
         
@@ -543,7 +599,7 @@
           <td><b>Scenario Question</b></td>
           <td>scenario</td>
           <td>How would you handle a database that's showing instability under load? </td>
-          <td>- Replication<br>- more efficient queries<br>- profiling<br>- review your data model for efficiency: improve cardinality, improve compressibility<br>- If SQL, look into other databases since SQL is (mostly) transferrable between databases<br>- Offload any batch processing to tools like apache spark<br>- Increase resources for the host machine (caveat that this isn't an infinitely scalable solution)</td>
+          <td><br>- implement load balancing/connection pooling where applicable (eg HAProxy, PGBouncer)<br>- Replication<br>- more efficient queries<br>- profiling<br>- review your data model for efficiency: improve cardinality, improve compressibility<br>- If SQL, look into other databases since SQL is (mostly) transferrable between databases<br>- Offload any batch processing to tools like apache spark<br>- Increase resources for the host machine (caveat that this isn't an infinitely scalable solution)</td>
           <td>⭐⭐⭐</td>
         </tr>
         
@@ -582,7 +638,7 @@
         <tr>
           <td><b>Java</b></td>
           <td>language</td>
-          <td>Explain what object refection is in Java and why it is useful?</td>
+          <td>Explain what object reflection is in Java and why it is useful?</td>
           <td>A feature that provides a way to get reflective information about Java classes and objects, and perform operations such as:<br>- Getting information about the methods and fields present inside the class at runtime.<br>- Creating a new instance of a class.<br>- Getting and setting the object fields directly by getting field reference, regardless of what the access modifier is.<br><br>The three main ways this is useful are:<br>- It can help observe or manipulate the runtime behaviour of applications.<br>- It can help debug or tests programs as you have direct access to methods, constructors. and fields.<br>- Methods can be called by name when you don't know the method in advance e.g. it could allow a user to pass in a class name, parameters for the constructor, and a method name to create an object and call a method.</td>
           <td>⭐⭐⭐</td>
         </tr>
